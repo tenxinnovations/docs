@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../api/">
+        <link rel="prev" href="../oec_arc/">
       
       
-        <link rel="next" href="../api/">
+        <link rel="next" href="../http_api/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
     
     
       
-        <title>Overview - 10X INNOVATIONS DOCS</title>
+        <title>Authentication - 10X INNOVATIONS DOCS</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#http-overview" class="md-skip">
+        <a href="#authentication" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Authentication
             
           </span>
         </div>
@@ -168,13 +168,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../intro/" class="md-tabs__link">
+      <a href="../oec_intro/" class="md-tabs__link md-tabs__link--active">
         OEM-IOT Cloud
       </a>
     </li>
@@ -184,15 +186,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../sm1_intro.md" class="md-tabs__link">
         Sentroller Mark 1
       </a>
     </li>
@@ -258,18 +258,20 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="true">
           OEM-IOT Cloud
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -287,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intro/" class="md-nav__link">
+      <a href="../oec_intro/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -301,6 +303,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../http_overview/" class="md-nav__link">
+        HTTP Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oec_arc/" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
@@ -309,7 +341,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Overview
+        Authentication
       </a>
       
     </li>
@@ -323,22 +355,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../auth/" class="md-nav__link">
-        Authentication
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/" class="md-nav__link">
-        APIs
+      <a href="../http_api/" class="md-nav__link">
+        HTTP APIs
       </a>
     </li>
   
@@ -357,20 +375,18 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
-        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
           Sentroller Mark 1
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -386,21 +402,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Overview
+    <li class="md-nav__item">
+      <a href="../sm1_intro.md" class="md-nav__link">
+        Introduction
       </a>
-      
     </li>
   
 
@@ -412,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/" class="md-nav__link">
+      <a href="../ble_api.md" class="md-nav__link">
         BLE APIs
       </a>
     </li>
@@ -460,66 +466,20 @@
 
 
 
-<h1 id="http-overview">HTTP Overview</h1>
-<p>HTTP is the main internet protocol for information exchange in the Internet. It also supports data encryption, which is usually called secure HTTP or HTTPs. When you use a web browser (Firefox, Chrome, Edge, etc.) you are sending and receiving packages using HTTP or HTTPs. Because of this, it is  not surprising to see that HTTPs has become a popular option for data exchange for IoT.</p>
-<p>When a developer implements HTTPs communication, they should look for a RESTful Application Programming Interface, or REST API, which exposes all the endpoints required to interact with a third-party application (like the OEM-IOT Cloud). In this section, you have a reference of our REST API that allows you to understand how to send and retrieve data from our servers.</p>
-<p>HTTP requests</p>
-<p>The following methods are specified within the HTTP standard:</p>
-<table>
-<thead>
-<tr>
-<th>HTTP METHOD</th>
-<th>DESCRIPTION</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>Used to retrieve information</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>Used to send information</td>
-</tr>
-</tbody>
-</table>
-<p>HTTP is a request/response protocol, this means that every request that you make is answered by the server. This response includes a number (response code) and a body. For example, when you make a request to retrieve a file on a website "(e.g. "Get me the file 'index.html'" )", you are effectively sending a GET request. If the request is correct, the server will typically return a 200 response code, along with requested body, in this case the file.</p>
-<p>An HTTP request also needs the following parameters:</p>
-<ul>
-<li><code>Host</code>: Specifies the server you will be making HTTP requests to, e.g. https://oem-iot.com</li>
-<li><code>Path</code>: This is typically the remaining portion of the URL that specifies the resource you want to consume, e.g. if an API endpoint is: <code>oem-iot.com/api/v1.6/devices/my-device</code> the path is <code>/api/v1.6/devices/my-device</code></li>
-<li><code>Headers</code>: Define the operating parameters of the HTTP request such as <code>X-Auth-Token</code>, <code>Content-Type</code>, <code>Content-Length</code>, etc.</li>
-<li><code>Body/payload</code>: In the case of POST and PATCH requests, the body is the data sent to the server, usually as a stringified JSON. By convention GET requests should not have a body because they are meant to request data, not sending them.</li>
-</ul>
-<p>OEM-IOT Cloud accepts data as JavaScript Object Notation or JSON. JSON is a typical HTTP data type, it is a collection of name/value pairs. In various programming languages, this is treated as an object, record, struct, dictionary, hash table, keyed list, or associative array. It is also human readable and language independent. An example of a JSON that TenX accepts can be seen below:</p>
-<p>JSON</p>
-<pre><code class="language-json">{&quot;Frequency&quot;: {&quot;value&quot;:10, &quot;timestamp&quot;: 1534881387000, &quot;context&quot;: {&quot;machine&quot;: &quot;1st floor&quot;}}}
+<h1 id="authentication">Authentication</h1>
+<p>Every request sent to the 10X Cloud requires a token. A token is a unique key that authorizes requests sent to
+the 10X IoT Cloud.
+Tokens valid for 6 hours and can be generated using your account’s API Key.
+Tokens are short lived. Tokens are auto renewed once deployment is complete..
+How to send a token in a request:</p>
+<p><code>X-Auth-Token=token</code></p>
+<p>Note: Do not send tokens as a query parameter as the token is visible (to logs, browser history and packet sniffers)</p>
+<p>//Example Request to create a device with Token in the Header</p>
+<pre><code class="language-bash">curl -X POST 'https://oem-iot.com/api/v1.0/devices/' \
+-H 'Content-Type: application/json' \
+-H 'X-Auth-Token: oaXBo6ODhIjPsusNRPUGIK4d72bc73' \
+-d '{}'
 </code></pre>
-<p>A typical HTTP request to TenX should be set as below:</p>
-<p>Text</p>
-<pre><code class="language-text">POST {PATH} HTTP/1.1&lt;CR&gt;&lt;LN&gt;
-Host: {HOST}&lt;CR&gt;&lt;LN&gt;
-User-Agent: {USER_AGENT}&lt;CR&gt;&lt;LN&gt;
-X-Auth-Token: {TOKEN}&lt;CR&gt;&lt;LN&gt;
-Content-Type: application/json&lt;CR&gt;&lt;LN&gt;
-Content-Length: {PAYLOAD_LENGTH}&lt;CR&gt;&lt;LN&gt;&lt;CR&gt;&lt;LN&gt;
-{PAYLOAD}
-&lt;CR&gt;&lt;LN&gt;
-</code></pre>
-<p>Where:</p>
-<ul>
-<li><code>{PATH}</code>: Path to the resource to consume
-    Example: <code>/api/v1.6/variables/</code> to get user's variables information.</li>
-<li><code>{HOST}</code>: Host URL.
-    Example: oem-iot.com</li>
-<li><code>{USER_AGENT}</code>: An optional string used to identify the type of client, be it by application type, operating system, software vendor or software version of the requesting user agent.
-    Examples: <code>OEM_CLOUD, CUST_DEVICE</code></li>
-<li><code>{TOKEN}</code>: Unique key that authorizes your device to ingest data inside your OEM-IOT account.</li>
-<li><code>{PAYLOAD_LENGTH}</code>: The number of characters of your payload.
-    Example: The payload <code>{"Frequency": 20}</code> will have a content-length of 19.</li>
-<li><code>{PAYLOAD}</code>: Data to send.
-    Example: <code>{"Frequency": 20}</code></li>
-</ul>
 
 
 
