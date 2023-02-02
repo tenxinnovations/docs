@@ -19,7 +19,7 @@
     
     
       
-        <title>Api - OEM-IOT CLOUD API</title>
+        <title>Api - OEM-IOT API</title>
       
     
     
@@ -81,7 +81,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="OEM-IOT CLOUD API" class="md-header__button md-logo" aria-label="OEM-IOT CLOUD API" data-md-component="logo">
+    <a href=".." title="OEM-IOT API" class="md-header__button md-logo" aria-label="OEM-IOT API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -94,7 +94,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            OEM-IOT CLOUD API
+            OEM-IOT API
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -167,13 +167,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="OEM-IOT CLOUD API" class="md-nav__button md-logo" aria-label="OEM-IOT CLOUD API" data-md-component="logo">
+    <a href=".." title="OEM-IOT API" class="md-nav__button md-logo" aria-label="OEM-IOT API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    OEM-IOT CLOUD API
+    OEM-IOT API
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -464,21 +464,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../oi/" class="md-nav__link">
-        Welcome to MkDocs
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../overview/" class="md-nav__link">
         Overview
       </a>
@@ -745,15 +730,15 @@
 <p>Root certificates are shared separately and are available in multiple formats.</p>
 <ul>
 <li><code>PEM</code>: A certificate chain with two root certificates from our certificate authorities (CAs).</li>
-<li><code>DER</code>:: Same as the PEM file, with an alternative encoding.</li>
-<li><code>CRT</code>:  Same as the PEM file, with a different extension. Often referred to as .crt, .cert or .cer.</li>
+<li><code>DER</code>: Same as the PEM file, with an alternative encoding.</li>
+<li><code>CRT</code>: Same as the PEM file, with a different extension. Often referred to as .crt, .cert or .cer.</li>
 </ul>
 <h3 id="api-overview">API OVERVIEW</h3>
 <table>
 <thead>
 <tr>
 <th>API name</th>
-<th>description</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -767,7 +752,7 @@
 </tr>
 <tr>
 <td>Event notifier API</td>
-<td>Allows webapp/ mobile app to get notified of event via webhooks</td>
+<td>Allows Client Backend to get notified of event via webhooks</td>
 </tr>
 <tr>
 <td>Event alert API</td>
@@ -780,11 +765,11 @@
 </tbody>
 </table>
 <h3 id="get-device-status">Get Device Status</h3>
-<p><strong>This API fetches the last seen status of the 10X device or IoT Module.</strong></p>
+<p><strong>This API fetches the last seen status of the Sentroller device or IoT Module.</strong></p>
 <p>Usage:</p>
 <pre><code class="language-bash">https:/oem-iot.com/api/v1.6/devices/&lt;device_label&gt;/device_status
 </code></pre>
-<p>Where <code>&lt;device_label&gt;</code> is  the label of the Device</p>
+<p>Where <code>&lt;device_label&gt;</code> is a string with the label of the device to which data will be sent to.</p>
 <h3 id="headers">Headers</h3>
 <p>The <code>"X-Auth-Token"</code> header is required for your request:</p>
 <table>
@@ -807,7 +792,7 @@
 </table>
 <h2 id="examples">Examples</h2>
 <p>Get last seen status of a device:</p>
-<pre><code class="language-bash">$ curl -X GET 'https://industrial.api.ubidots.com/api/v1.6/devices/device_status’ \
+<pre><code class="language-bash">$ curl -X GET 'https://oem-iot.com/api/v1.6/devices/device_status’ \
 -H 'X-Auth-Token: oaXBo6ODhIjPsusNRPUGIK4d72bc73'
 </code></pre>
 <p>Expected response:</p>

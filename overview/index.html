@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../oi/">
+        <link rel="prev" href="../oem/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -17,7 +17,7 @@
     
     
       
-        <title>Overview - OEM-IOT CLOUD API</title>
+        <title>Overview - OEM-IOT API</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#http-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -79,7 +79,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="OEM-IOT CLOUD API" class="md-header__button md-logo" aria-label="OEM-IOT CLOUD API" data-md-component="logo">
+    <a href=".." title="OEM-IOT API" class="md-header__button md-logo" aria-label="OEM-IOT API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -92,7 +92,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            OEM-IOT CLOUD API
+            OEM-IOT API
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -165,13 +165,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="OEM-IOT CLOUD API" class="md-nav__button md-logo" aria-label="OEM-IOT CLOUD API" data-md-component="logo">
+    <a href=".." title="OEM-IOT API" class="md-nav__button md-logo" aria-label="OEM-IOT API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    OEM-IOT CLOUD API
+    OEM-IOT API
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -242,21 +242,6 @@
 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../oi/" class="md-nav__link">
-        Welcome to MkDocs
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
     
   
   
@@ -310,9 +295,9 @@
 
 
 
-<h1 id="overview">Overview</h1>
-<p>HTTP is the main internet protocol for information exchange in the Internet. It also supports data encryption, which is usually called secure HTTP or HTTPs. When you use a web browser (Firefox, Chrome, Edge, etc.) you are sending and receiving packages using HTTP or HTTPs. Because of this, it was not surprising to see that HTTPs has become a popular option for data exchange for IoT.</p>
-<p>When a developer implements HTTPs communication, he should look for a RESTful Application Programming Interface, or REST API, which exposes all the endpoints required to interact with a third-party application (like the 10X Cloud). In this section, you have a reference of our REST API that allows you to understand how to send and retrieve data from our servers.</p>
+<h1 id="http-overview">HTTP Overview</h1>
+<p>HTTP is the main internet protocol for information exchange in the Internet. It also supports data encryption, which is usually called secure HTTP or HTTPs. When you use a web browser (Firefox, Chrome, Edge, etc.) you are sending and receiving packages using HTTP or HTTPs. Because of this, it is  not surprising to see that HTTPs has become a popular option for data exchange for IoT.</p>
+<p>When a developer implements HTTPs communication, they should look for a RESTful Application Programming Interface, or REST API, which exposes all the endpoints required to interact with a third-party application (like the OEM-IOT Cloud). In this section, you have a reference of our REST API that allows you to understand how to send and retrieve data from our servers.</p>
 <p>Note: Our goal with this section is to help you understand what’s happening behind the scenes when communicating with Ubidots, enabling you to replicate it within your own firmware. That's why we avoid using our custom libraries in all the examples.</p>
 <p>HTTP requests</p>
 <p>The following methods are specified within the HTTP standard:</p>
@@ -334,15 +319,15 @@
 </tr>
 </tbody>
 </table>
-<p>HTTP is a request/response protocol, this means that every request that you make is answered by the server. This response includes a number (response code) and a body. For example, when you make a request to retrieve a file on a website "(e.g. "Get me the file 'webside.html'" )", you are effectively sending a GET request. If the request is correct, the server will typically return a 200 response code, along with requested body, in this case the file.</p>
+<p>HTTP is a request/response protocol, this means that every request that you make is answered by the server. This response includes a number (response code) and a body. For example, when you make a request to retrieve a file on a website "(e.g. "Get me the file 'index.html'" )", you are effectively sending a GET request. If the request is correct, the server will typically return a 200 response code, along with requested body, in this case the file.</p>
 <p>An HTTP request also needs the following parameters:</p>
 <ul>
-<li><code>Host</code>: Specifies the server you will be making HTTP requests to, e.g. https://rapid-iot.dev</li>
-<li><code>Path</code>: This is typically the remaining portion of the URL that specifies the resource you want to consume, e.g. if an API endpoint is: <code>rapid-iot.dev/api/v1.6/devices/my-device</code> the path is <code>/api/v1.6/devices/my-device</code></li>
+<li><code>Host</code>: Specifies the server you will be making HTTP requests to, e.g. https://oem-iot.com</li>
+<li><code>Path</code>: This is typically the remaining portion of the URL that specifies the resource you want to consume, e.g. if an API endpoint is: <code>oem-iot.com/api/v1.6/devices/my-device</code> the path is <code>/api/v1.6/devices/my-device</code></li>
 <li><code>Headers</code>: Define the operating parameters of the HTTP request such as <code>X-Auth-Token</code>, <code>Content-Type</code>, <code>Content-Length</code>, etc.</li>
 <li><code>Body/payload</code>: In the case of POST and PATCH requests, the body is the data sent to the server, usually as a stringified JSON. By convention GET requests should not have a body because they are meant to request data, not sending them.</li>
 </ul>
-<p>TenX accepts data as JavaScript Object Notation or JSON. JSON is a typical HTTP data type, it is a collection of name/value pairs. In various programming languages, this is treated as an object, record, struct, dictionary, hash table, keyed list, or associative array. It is also human readable and language independent. An example of a JSON that TenX accepts can be seen below:</p>
+<p>OEM-IOT Cloud accepts data as JavaScript Object Notation or JSON. JSON is a typical HTTP data type, it is a collection of name/value pairs. In various programming languages, this is treated as an object, record, struct, dictionary, hash table, keyed list, or associative array. It is also human readable and language independent. An example of a JSON that TenX accepts can be seen below:</p>
 <p>JSON</p>
 <pre><code class="language-json">{&quot;Frequency&quot;: {&quot;value&quot;:10, &quot;timestamp&quot;: 1534881387000, &quot;context&quot;: {&quot;machine&quot;: &quot;1st floor&quot;}}}
 </code></pre>
@@ -362,10 +347,10 @@ Content-Length: {PAYLOAD_LENGTH}&lt;CR&gt;&lt;LN&gt;&lt;CR&gt;&lt;LN&gt;
 <li><code>{PATH}</code>: Path to the resource to consume
     Example: <code>/api/v1.6/variables/</code> to get user's variables information.</li>
 <li><code>{HOST}</code>: Host URL.
-    Example: rapid-iot.dev</li>
+    Example: oem-iot.com</li>
 <li><code>{USER_AGENT}</code>: An optional string used to identify the type of client, be it by application type, operating system, software vendor or software version of the requesting user agent.
     Examples: <code>OEM_CLOUD, CUST_DEVICE</code></li>
-<li><code>{TOKEN}</code>: Unique key that authorizes your device to ingest data inside your TenX account.</li>
+<li><code>{TOKEN}</code>: Unique key that authorizes your device to ingest data inside your OEM-IOT account.</li>
 <li><code>{PAYLOAD_LENGTH}</code>: The number of characters of your payload.
     Example: The payload <code>{"Frequency": 20}</code> will have a content-length of 19.</li>
 <li><code>{PAYLOAD}</code>: Data to send.
