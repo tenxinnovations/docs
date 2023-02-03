@@ -526,8 +526,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#data-format-for-connectionless-interactions" class="md-nav__link">
-    Data Format for connectionless interactions.
+  <a href="#data-format-for-connection-less-interactions" class="md-nav__link">
+    Data Format for connection-less interactions.
   </a>
   
 </li>
@@ -698,8 +698,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#data-format-for-connectionless-interactions" class="md-nav__link">
-    Data Format for connectionless interactions.
+  <a href="#data-format-for-connection-less-interactions" class="md-nav__link">
+    Data Format for connection-less interactions.
   </a>
   
 </li>
@@ -751,11 +751,11 @@ The BLE MAC ADDRESS IS 6 bytes, usually written in an AA:BB:CC:DD:EE:FF format. 
 <h2 id="ble-mac-address-handling-in-android-vs-ios">BLE MAC address handling in Android vs iOS</h2>
 <p>The Bluetooth stack is different in Android and iOS, which impacts how devices are scanned and identified. 
 In Android, when the application requests a scan, the BLE stack scans for devices and reports the device's hardware MAC address. </p>
-<p>In iOS however, the stack scans for devices, but obfuscticates the hardware MAC address and replaces it with a device 16 byte UUID. </p>
+<p>In iOS however, the stack scans for devices, but obfuscates the hardware MAC address and replaces it with a device 16 byte UUID. </p>
 <p>From a mobile app perspective it is critical to know the device's hardware MAC address, since this is the Sentroller's uniqueID. To overcome this, the Sentroller sends its hardware MAC address in a second location BLE advertisment for redundancy. </p>
 <h3 id="_1"></h3>
 <ol>
-<li>Default location: In the BLE spec's source hardware field, grey box name ADV ADDRESS. iOS will obfusticate this and report up the stack</li>
+<li>Default location: In the BLE spec's source hardware field, grey box name ADV ADDRESS. iOS will obfuscate this and report up the stack</li>
 <li>Sentroller redundancy : In the advertisment data's user field, yellow box (which iOS will not alter).</li>
 </ol>
 <p>Thus by inspecting the BLE advertisment, and examining the user data field, the mobile app can determine the true MAC address of the device hardware regardless of Android or iOS. </p>
@@ -770,7 +770,7 @@ In Android, when the application requests a scan, the BLE stack scans for device
 <li>
 <p><strong>Provision the Sentroller.</strong> 
 Provisioning is the process of associating a new Sentroller device with an end customer account. Usually once provisioned, an end device is assumed to be in 
-operation and in use by the end customer. Provisioning is also a mechanism to connect a device to the Cloud via WiFi, or other connnectivity channels.</p>
+operation and in use by the end customer. Provisioning is also a mechanism to connect a device to the Cloud via WiFi, or other connectivity channels.</p>
 </li>
 <li>
 <p><strong>Write data into the Sentroller.</strong>
@@ -802,10 +802,10 @@ is handled by a small and light weight program called message pack. The mobile a
 JSON output. </p>
 <h3 id="interactions-without-a-ble-connection">Interactions without a BLE connection</h3>
 <ol>
-<li><strong>Reading and interpreting the BLE advertisement.</strong> The Sentroller transmits a BLE advertisement self every 300ms (configurable). This BLE advertisement, contains information such as the MAC address of the device, battery level, provisionig status, and also application related information such as sensor state, last event, thresholds etc. By monitoring these advertisment, the mobile app can track the real time state of the device, without having to connect to it. 
+<li><strong>Reading and interpreting the BLE advertisement.</strong> The Sentroller transmits a BLE advertisement self every 300ms (configurable). This BLE advertisement, contains information such as the MAC address of the device, battery level, provisioning status, and also application related information such as sensor state, last event, thresholds etc. By monitoring these advertisment, the mobile app can track the real time state of the device, without having to connect to it. 
 <em>The nature of the data in the advertisment can be configured.</em> </li>
 </ol>
-<h3 id="data-format-for-connectionless-interactions">Data Format for connectionless interactions.</h3>
+<h3 id="data-format-for-connection-less-interactions">Data Format for connection-less interactions.</h3>
 <p>BLE advertisments are a fixed 31 byte sized packet (37 bytes in all, of which 6 are used for MAC Address). The size and format of the packet is governed by the Bluetooth specification. </p>
 <p><img alt="BLE packet format." src="https://microchipdeveloper.com/local--files/wireless:ble-link-layer-packet-types/adv-ind-packet.png" title="This is a sample image." /></p>
 <p>The user data portion of the BLE advertisement (AD 0 to AD N) is configurable based on application need. </p>
@@ -843,8 +843,8 @@ The mobile app writes the WiFi credentials and a call back address into the BLE 
 &quot;cbapi&quot;:&quot;&lt;http://www.callbacklocation.com&gt;&quot;
 }
 </code></pre>
-<p>1.Upon successful provision the Sentroller will invoke the callback API, signalling to the backend that the Provisioing was successful (or failure code). The callback API must be specified by the mobile app developer.                <br />
-1.It is also possible to get a provisioning result response directly via BLE by doing a read on the read charactertics's buffer. The result will be:</p>
+<p>1.Upon successful provision the Sentroller will invoke the callback API, signalling to the backend that the Provisioning was successful (or failure code). The callback API must be specified by the mobile app developer.                <br />
+1.It is also possible to get a provisioning result response directly via BLE by doing a read on the read charactertics buffer. The result will be:</p>
 <pre><code>{&quot;Provisioning result&quot;:&quot;&lt;status&gt;&quot;}
 </code></pre>
 <p>where status could be

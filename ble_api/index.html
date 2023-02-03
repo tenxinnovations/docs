@@ -563,15 +563,19 @@ The mobile app writes the WiFi credentials and a call back address into the BLE 
 &quot;cbapi&quot;:&quot;&lt;http://www.callbacklocation.com&gt;&quot;
 }
 </code></pre>
-<p>1.Upon successful provision the Sentroller will invoke the callback API, signalling to the backend that the Provisioing was successful (or failure code). The callback API must be specified by the mobile app developer.                <br />
-1.It is also possible to get a provisioning result response directly via BLE by doing a read on the read charactertics's buffer. The result will be:</p>
+<ol>
+<li>Upon successful provision the Sentroller will invoke the callback API, signalling to the backend that the Provisioning was successful (or failure code). The callback API must be specified by the mobile app developer.                  </li>
+<li>It is also possible to get a provisioning result response directly via BLE by doing a read on the read charactertics's buffer. The result will be:</li>
+</ol>
 <pre><code>{&quot;Provisioning result&quot;:&quot;&lt;status&gt;&quot;}
 </code></pre>
-<p>where status could be
-* Pending : Provisioning still in process
-* Success : Device successfully provisioned
-* fail_no_wifi: Failed due to WiFi connectivity issue
-* fail_other : Failed due to any other issue</p>
+<p>where status could be</p>
+<ul>
+<li>Pending : Provisioning still in process</li>
+<li>Success : Device successfully provisioned</li>
+<li>fail_no_wifi: Failed due to WiFi connectivity issue</li>
+<li>fail_other : Failed due to any other issue</li>
+</ul>
 
 
 
