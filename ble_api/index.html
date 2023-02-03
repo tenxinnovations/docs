@@ -549,21 +549,14 @@
 <li>
 <p>The mobile app scans for device advertisments with the provisioning field enabled. </p>
 </li>
-<li>
-<p>The mobile app establishes a connection with the device in provisioning mode</p>
-</li>
-<li>
-<p>The mobile app discovers the Sentroller BLE services, plus a read and write characteristic. 
-The mobile app writes the WiFi credentials and a call back address into the BLE using the following JSON.</p>
-</li>
-</ol>
-<pre><code>    {
-    &quot;SSID&quot;:&quot;&lt;users_wifi_ssid&gt;&quot;, 
-    &quot;pphrase&quot;:&quot;&lt;wifi_password&gt;&quot;,
-    &quot;cbapi&quot;:&quot;&lt;http://www.callbacklocation.com&gt;&quot;
-    }
-</code></pre>
-<ol>
+<li>The mobile app establishes a connection with the device in provisioning mode</li>
+<li>The mobile app discovers the Sentroller BLE services, plus a read and write characteristic. 
+The mobile app writes the WiFi credentials and a call back address into the BLE using the following JSON.
+    <code>{
+    "SSID":"&lt;users_wifi_ssid&gt;", 
+    "pphrase":"&lt;wifi_password&gt;",
+    "cbapi":"&lt;http://www.callbacklocation.com&gt;"
+    }</code></li>
 <li>Upon successful provision the Sentroller will invoke the callback API, signalling to the backend that the Provisioning was successful (or failure code). The callback API must be specified by the mobile app developer.                  </li>
 <li>It is also possible to get a provisioning result response directly via BLE by doing a read on the read charactertics's buffer. The result will be:</li>
 </ol>
