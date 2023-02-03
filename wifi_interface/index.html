@@ -9,17 +9,15 @@
       
       
       
-        <link rel="prev" href="../http_overview/">
+        <link rel="prev" href="../ble_api/">
       
-      
-        <link rel="next" href="../http_api/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
     
     
       
-        <title>Authentication - 10X INNOVATIONS DOCS</title>
+        <title>WiFi Interface - 10X INNOVATIONS DOCS</title>
       
     
     
@@ -67,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#authentication" class="md-skip">
+        <a href="#wifi-interface" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Authentication
+              WiFi Interface
             
           </span>
         </div>
@@ -168,15 +166,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../oec_intro/" class="md-tabs__link md-tabs__link--active">
+      <a href="../oec_intro/" class="md-tabs__link">
         OEM-IOT Connect
       </a>
     </li>
@@ -186,13 +182,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../sm1_intro/" class="md-tabs__link">
+      <a href="../sm1_intro/" class="md-tabs__link md-tabs__link--active">
         Sentroller Mark 1
       </a>
     </li>
@@ -258,20 +256,18 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
-        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
           OEM-IOT Connect
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -329,21 +325,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../http_auth/" class="md-nav__link">
         Authentication
       </a>
-      
     </li>
   
 
@@ -375,18 +361,20 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="true">
           Sentroller Mark 1
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -444,11 +432,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../wifi_interface/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          WiFi Interface
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         WiFi Interface
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#communications-between-the-sentroller-and-the-oem-iot-connect-cloud-are-fully-managed-by-the-sentroller-and-there-is-no-api-exposed-on-this-interface" class="md-nav__link">
+    Communications between the Sentroller and the OEM-IoT Connect Cloud are fully managed by the Sentroller and there is no API exposed on this interface.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mobile-app-always-communicates-with-the-sentroller-via-the-cloud-there-is-no-direct-wifi-connection" class="md-nav__link">
+    The mobile app always communicates with the Sentroller via the Cloud, there is no direct WiFi connection.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mobile-app-only-needs-to-provision-the-sentroller-thus-enabling-it-to-get-online" class="md-nav__link">
+    The mobile app only needs to provision the Sentroller thus enabling it to get online.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -480,6 +523,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#communications-between-the-sentroller-and-the-oem-iot-connect-cloud-are-fully-managed-by-the-sentroller-and-there-is-no-api-exposed-on-this-interface" class="md-nav__link">
+    Communications between the Sentroller and the OEM-IoT Connect Cloud are fully managed by the Sentroller and there is no API exposed on this interface.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mobile-app-always-communicates-with-the-sentroller-via-the-cloud-there-is-no-direct-wifi-connection" class="md-nav__link">
+    The mobile app always communicates with the Sentroller via the Cloud, there is no direct WiFi connection.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mobile-app-only-needs-to-provision-the-sentroller-thus-enabling-it-to-get-online" class="md-nav__link">
+    The mobile app only needs to provision the Sentroller thus enabling it to get online.
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -494,20 +566,10 @@
 
 
 
-<h1 id="authentication">Authentication</h1>
-<p>Every request sent to the 10X Cloud requires a token. A token is a unique key that authorizes requests sent to
-the 10X IoT Cloud.
-Tokens valid for 6 hours and can be generated using your account’s API Key.
-Tokens are short lived. Tokens are auto renewed once deployment is complete..
-How to send a token in a request:</p>
-<p><code>X-Auth-Token=token</code></p>
-<p>Note: Do not send tokens as a query parameter as the token is visible (to logs, browser history and packet sniffers)</p>
-<p>//Example Request to create a device with Token in the Header</p>
-<pre><code class="language-bash">curl -X POST 'https://oem-iot.com/api/v1.0/devices/' \
--H 'Content-Type: application/json' \
--H 'X-Auth-Token: oaXBo6ODhIjPsusNRPUGIK4d72bc73' \
--d '{}'
-</code></pre>
+<h1 id="wifi-interface">WiFi Interface</h1>
+<h3 id="communications-between-the-sentroller-and-the-oem-iot-connect-cloud-are-fully-managed-by-the-sentroller-and-there-is-no-api-exposed-on-this-interface">Communications between the Sentroller and the OEM-IoT Connect Cloud are fully managed by the Sentroller and there is no API exposed on this interface.</h3>
+<h3 id="the-mobile-app-always-communicates-with-the-sentroller-via-the-cloud-there-is-no-direct-wifi-connection">The mobile app always communicates with the Sentroller via the Cloud, there is no direct WiFi connection.</h3>
+<h3 id="the-mobile-app-only-needs-to-provision-the-sentroller-thus-enabling-it-to-get-online">The mobile app only needs to provision the Sentroller thus enabling it to get online.</h3>
 
 
 
