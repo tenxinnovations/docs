@@ -537,13 +537,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#provisioning-process" class="md-nav__link">
-    Provisioning Process.
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -709,13 +702,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#provisioning-process" class="md-nav__link">
-    Provisioning Process.
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -807,7 +793,7 @@ JSON output. </p>
 </ol>
 <h3 id="data-format-for-connection-less-interactions">Data Format for connection-less interactions.</h3>
 <p>BLE advertisments are a fixed 31 byte sized packet (37 bytes in all, of which 6 are used for MAC Address). The size and format of the packet is governed by the Bluetooth specification. </p>
-<p><img alt="BLE packet format." src="https://microchipdeveloper.com/local--files/wireless:ble-link-layer-packet-types/adv-ind-packet.png" title="This is a sample image." /></p>
+<p><img alt="BLE packet format." src="../images/adv-ind-packet.png" title="This is a sample image." /></p>
 <p>The user data portion of the BLE advertisement (AD 0 to AD N) is configurable based on application need. </p>
 <p>BLE advertisements are sent over the air as a simple byte array. Various libraries exist in application development frameworks to extract this byte array into custom data structures. </p>
 <p>Data Format. </p>
@@ -821,37 +807,6 @@ Insert image here</p>
 4. Sensor Readings</p>
 <p>BLE advertisements are sent over the air as a simple byte array. Various libraries exist in application development frameworks to extract this byte array into 
 custom data structures. </p>
-<h2 id="provisioning-process">Provisioning Process.</h2>
-<ol>
-<li>
-<p>Upon a user action, such as a button press on the Sentroller device, a flag in the advertisement is set. This indicates that to the mobile app that provisioning mode is entered. </p>
-</li>
-<li>
-<p>The mobile app scans for device advertisments with the provisioning field enabled. </p>
-</li>
-<li>
-<p>The mobile app establishes a connection with the device in provisioning mode</p>
-</li>
-<li>
-<p>The mobile app discovers the Sentroller BLE services, plus a read and write characteristic. 
-The mobile app writes the WiFi credentials and a call back address into the BLE using the following JSON.</p>
-</li>
-</ol>
-<pre><code>{
-&quot;SSID&quot;:&quot;&lt;users_wifi_ssid&gt;&quot;, 
-&quot;pphrase&quot;:&quot;&lt;wifi_password&gt;&quot;,
-&quot;cbapi&quot;:&quot;&lt;http://www.callbacklocation.com&gt;&quot;
-}
-</code></pre>
-<p>1.Upon successful provision the Sentroller will invoke the callback API, signalling to the backend that the Provisioning was successful (or failure code). The callback API must be specified by the mobile app developer.                <br />
-1.It is also possible to get a provisioning result response directly via BLE by doing a read on the read charactertics buffer. The result will be:</p>
-<pre><code>{&quot;Provisioning result&quot;:&quot;&lt;status&gt;&quot;}
-</code></pre>
-<p>where status could be
-* Pending : Provisioning still in process
-* Success : Device successfully provisioned
-* fail_no_wifi: Failed due to WiFi connectivity issue
-* fail_other : Failed due to any other issue</p>
 
 
 
